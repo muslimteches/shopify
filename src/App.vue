@@ -3,9 +3,14 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: 'App'
-})
+  name: "App",
+});
 </script>
+<style lang="scss">
+body {
+  background-color: $secondary;
+}
+</style>
