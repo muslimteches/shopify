@@ -1,1 +1,13 @@
 // app global css in SCSS form
+@font-face {
+  font-family: "IRANSans";
+  src: url("fonts/IRANSansWeb(FaNum)_Bold.ttf") format("truetype");
+  font-wight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "IRANSans";
+  src: url("fonts/IRANSansWeb(FaNum).ttf") format("truetype");
+  font-wight: normal;
+  font-style: normal;
+}
