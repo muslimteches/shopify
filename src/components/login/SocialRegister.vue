@@ -5,8 +5,8 @@
 <script>
 export default {
   // name: 'ComponentName',
-  setup () {
-    return {}
-  }
-}
+  setup() {
+    return {};
+  },
+};
 </script>

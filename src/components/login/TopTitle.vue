@@ -6,8 +6,8 @@
       </h4>
     </div>
     <div class="col-12 row justify-center items-center">
-      <p class="no-margin">آیا قبلاٌ ثبت نام کرده اید؟</p>
-      <q-btn dense flat color="primary" class="text-weight-bold" label="ورود" />
+      <p class="no-margin text-white">آیا قبلاٌ ثبت نام کرده اید؟</p>
+      <q-btn dense flat color="white" class="text-weight-bold" label="ورود" />
     </div>
   </div>
 </template>
