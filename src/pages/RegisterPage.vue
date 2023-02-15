@@ -1,5 +1,5 @@
 <template>
-  <q-page padding>
+  <q-page>
     <!-- content -->
     <div class="row full-width justify-center bg-svg" style="min-height: 100vh">
       <div class="col-6">
@@ -12,6 +12,7 @@
 
 <script setup>
 import TopTitle from "src/components/login/TopTitle.vue";
+import FormComponent from "src/components/login/FormComponent.vue";
 </script>
 <style lang="scss">
 .bg-svg {
