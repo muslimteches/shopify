@@ -1,15 +1,16 @@
 <template>
   <q-page>
     <!-- content -->
-    <div class="row full-width" style="min-height: 100vh">
-      <div class="col-6"></div>
+    <div class="row full-width justify-center" style="min-height: 100vh">
       <div class="col-6">
-        <side-image />
+        <TopTitlee />
+        <FormComponent />
       </div>
     </div>
   </q-page>
 </template>
 
 <script setup>
-import SideImage from "src/components/login/SideImage.vue";
+import FormComponent from "src/components/login/FormComponent.vue";
+import TopTitle from "src/components/login/TopTitle.vue";
 </script>
