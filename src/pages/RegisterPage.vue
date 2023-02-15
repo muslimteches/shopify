@@ -1,5 +1,5 @@
 <template>
-  <q-page>
+  <q-page class="bg-#BEB8B1">
     <!-- content -->
     <div class="row full-width justify-center" style="min-height: 100vh">
       <div class="col-6">

@@ -9,7 +9,15 @@
             v-model="username"
             label="نام و نام خانوادگی"
           />
-          <q-input dense rounded v-model="password" label="رمز عبور" />
+          <q-input
+            dense
+            rounded
+            class="cursor-pointer"
+            @click="ispwd"
+            v-model="password"
+            label="رمز عبور"
+            hint="Password with toggle"
+          />
           <div>
             <q-btn type="submit " color="primary" label="تایید" />
           </div>
@@ -23,6 +31,7 @@
 import { ref } from "vue";
 const username = ref(null);
 const password = ref(null);
+const ispwd = ref(true);
 function onSubmit() {}
 </script>
 <style lang="scss">
