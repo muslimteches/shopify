@@ -1,6 +1,6 @@
 <template>
   <div>
-    <q-card class="my-card">
+    <q-card class="bg-backDrop" flat>
       <q-card-section>
         <q-form @submit="onSubmit" class="q-gutter-md">
           <q-input
@@ -26,3 +26,11 @@ function onSubmit() {
   alert("تمام دوغون");
 }
 </script>
+
+<style lang="scss">
+.bg-backDrop {
+  background-color: rgba(0, 0, 0, 0.107);
+  backdrop-filter: blur(7px) !important;
+  border: 1px solid white;
+}
+</style>
