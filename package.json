@@ -41,5 +41,15 @@
     "node": "^18 || ^16 || ^14.19",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "main": ".eslintrc.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muslimteches/shopify.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muslimteches/shopify/issues"
+  },
+  "homepage": "https://github.com/muslimteches/shopify#readme"
 }
