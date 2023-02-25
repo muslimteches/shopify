@@ -3,12 +3,7 @@
     <q-card class="my-card">
       <q-card-section>
         <q-form @submit="onSubmit" class="q-gutter-md">
-          <q-input
-            dense
-            rounded
-            v-model="username"
-            label="نام و نام خانوادگی"
-          />
+          <q-input dense v-model="username" label="نام و نام خانوادگی" />
           <q-input
             v-model="password"
             dense
