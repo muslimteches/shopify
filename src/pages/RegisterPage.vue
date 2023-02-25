@@ -10,6 +10,7 @@
 </template>
 
 <script setup>
+import FormComponent from "src/components/login/FormComponent.vue";
 import TopTitle from "src/components/login/TopTitle.vue";
 </script>
 <style lang="scss">
