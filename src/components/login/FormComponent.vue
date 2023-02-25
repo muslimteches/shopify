@@ -11,7 +11,7 @@
           />
           <q-input
             v-model="password"
-            filled
+            dense
             label="رمز عبور"
             :type="isPwd ? 'password' : 'text'"
           >
@@ -35,7 +35,7 @@
 <script setup>
 import { ref } from "vue";
 const username = ref(null);
-const password = ref("");
+const password = ref(null);
 const ispwd = ref(true);
 function onSubmit() {}
 </script>
