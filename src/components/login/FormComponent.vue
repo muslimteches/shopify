@@ -1,15 +1,13 @@
 <template>
   <div>
-    <q-card class="my-card">
+    <q-card class="my-card bg-backdrop">
       <q-card-section>
         <q-form @submit="onSubmit" class="q-gutter-md">
           <q-input
             outlined
             dense
             v-model="username"
-            :label="` نام   کاربری (${
-              type === 'number' ? 'تلفن' : 'ایمیل'
-            })                     `"
+            :label="`نام کاربری  (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
           />
           <template #append>
             <q-btn-toggle
@@ -78,7 +76,10 @@ const options = ref([
 ]);
 function onSubmit() {}
 </script>
-<style>
+<style lang="scss">
+.bg-backdrop {
+  backdrop-filter: blur(10px);
+}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
