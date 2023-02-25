@@ -7,8 +7,24 @@
             outlined
             dense
             v-model="username"
-            label="نام و نام خانوادگی"
+            :label="` نام   کاربری (${
+              type === 'number' ? 'تلفن' : 'ایمیل'
+            })                     `"
           />
+          <template #append>
+            <q-btn-toggle
+              v-model="type"
+              dense
+              size="sm"
+              toggle-color="primary"
+              :options="options"
+            >
+              <template #1> <q-icon name="phone" /> </template>
+              <template #2>
+                <q-icon name="mail" />
+              </template>
+            </q-btn-toggle>
+          </template>
 
           <q-input
             v-model="password"
@@ -56,6 +72,10 @@ const password = ref(null);
 const ispwd = ref(true);
 const isPwdRepeat = ref(true);
 const type = ref("number");
+const options = ref([
+  { label: "", value: "number", slot: 1 },
+  { label: "", value: "email", slot: 2 },
+]);
 function onSubmit() {}
 </script>
 <style lang="scss"></style>
