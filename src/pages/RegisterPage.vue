@@ -1,9 +1,9 @@
 <template>
-  <q-page class="bg-#BEB8B1">
+  <q-page>
     <!-- content -->
     <div class="row full-width justify-center" style="min-height: 100vh">
       <div class="col-6">
-        <TopTitlee />
+        <TopTitle />
         <FormComponent />
       </div>
     </div>
