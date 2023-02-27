@@ -8,7 +8,7 @@
             dense
             clearable
             v-model="username"
-            :label="`نام کاربری  (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
+            :label="`نام کاربری (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
             :rules="[(val) => (!!val && val.length >= 3) || 'لطفا خالی نذارید']"
             hide-bottom-space
           />
