@@ -37,6 +37,7 @@
 import { ref } from "vue";
 const username = ref(null);
 const password = ref(null);
+const repeatPassword = ref(null);
 const isPwd = ref(true);
 const isPwdRepeat = ref(true);
 const type = ref("number");
