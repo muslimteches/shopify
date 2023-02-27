@@ -3,15 +3,18 @@
     <q-card class="my-card bg-backdrop">
       <q-card-section>
         <q-form @submit="onSubmit" class="q-gutter-md">
-          <q-input outlined dense v-model="username" :label="`نام کاربری  (${type === 'number' ? 'تلفن' : 'ایمیل'})`" />
-          <template #append>
-            <q-btn-toggle v-model="type" dense size="sm" toggle-color="primary" :options="options">
-              <template #1> <q-icon name="phone" /> </template>
-              <template #2>
-                <q-icon name="mail" />
-              </template>
-            </q-btn-toggle>
-          </template>
+          <q-input outlined dense v-model="username" :label="`نام کاربری  (${type === 'number' ? 'تلفن' : 'ایمیل'})`">
+            <template #append>
+              <q-btn-toggle v-model="type" flat dense size="sm" toggle-color="primary" :options="options">
+                <template #1>
+                  <q-icon name="phone" />
+                </template>
+                <template #2>
+                  <q-icon name="mail" />
+                </template>
+              </q-btn-toggle>
+            </template>
+          </q-input>
 
           <q-input v-model="password" outlined dense label="رمز عبور" :type="isPwd ? 'password' : 'text'">
             <template v-slot:append>
@@ -34,7 +37,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 const username = ref(null);
 const password = ref(null);
 const repeatPassword = ref(null);
