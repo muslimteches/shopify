@@ -2,10 +2,10 @@
   <div class="q-my-lg">
     <q-card class="my-card">
       <q-card-section>
-        <q-form ref="form" class="q-gutter-md">
+        <q-form @submit="onSubmit" class="q-gutter-md">
           <q-input outlined dense :type="type" v-model="username"
-            :label="`نام کاربری (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
-            :rules="[val => !!val && val.length >= 3 || 'این فیلد الزامی است']" hide-bottom-space>
+            :label="`نام کاربری (${type === 'number' ? 'تلفن' : 'ایمیل'})`" error="true"
+            :rules="[val => !!val || 'این فیلد الزامی است']" hide-bottom-space>
             <template #append>
               <q-btn-toggle v-model="type" dense flat size="sm" toggle-color="primary" :options="options">
                 <template #1>
@@ -29,7 +29,7 @@
             </template>
           </q-input>
           <div>
-            <q-btn label="Submit" type="submit" @click="onSubmit" color="primary" />
+            <q-btn @mouseover.stop="checkValidation" label="Submit" class="submit-btn" type="submit" color="primary" />
           </div>
         </q-form>
       </q-card-section>
@@ -45,17 +45,25 @@ const repeatPassword = ref(null);
 const type = ref("number");
 const isPwd = ref(true);
 const isPwdRepeat = ref(true);
-const form = ref(null)
 const options = ref([
   { label: "", value: "number", slot: 1 },
   { label: "", value: "email", slot: 2 },
 ]);
+const errors = ref(true)
 function onSubmit () {
-  if (!form.value.validate()) {
-    alert('ok')
-  } else {
-    alert('hoshdar')
-  }
+  errors.value = false
+}
+function checkValidation () {
+  setTimeout(() => {
+    if (errors.value) {
+      let btn = document.querySelector('.submit-btn')
+      btn.classList.remove('bg-primary')
+      btn.classList.add('bg-red')
+      console.log(btn)
+    } else {
+
+    }
+  }, 10)
 }
 </script>
 <style></style>
