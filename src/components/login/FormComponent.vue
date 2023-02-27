@@ -2,23 +2,12 @@
   <div class="q-my-lg">
     <q-card class="my-card">
       <q-card-section>
-        <q-form @submit="onSubmit" class="q-gutter-md">
-          <q-input
-            outlined
-            dense
-            :type="type"
-            v-model="username"
+        <q-form ref="form" class="q-gutter-md">
+          <q-input outlined dense :type="type" v-model="username"
             :label="`نام کاربری (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
-          >
+            :rules="[val => !!val && val.length >= 3 || 'این فیلد الزامی است']" hide-bottom-space>
             <template #append>
-              <q-btn-toggle
-                v-model="type"
-                dense
-                flat
-                size="sm"
-                toggle-color="primary"
-                :options="options"
-              >
+              <q-btn-toggle v-model="type" dense flat size="sm" toggle-color="primary" :options="options">
                 <template #1>
                   <q-icon name="phone" />
                 </template>
@@ -28,38 +17,19 @@
               </q-btn-toggle>
             </template>
           </q-input>
-          <q-input
-            v-model="password"
-            outlined
-            dense
-            label="رمز"
-            :type="isPwd ? 'password' : 'text'"
-          >
+          <q-input v-model="password" outlined dense label="رمز" :type="isPwd ? 'password' : 'text'">
             <template v-slot:append>
-              <q-icon
-                :name="isPwd ? 'visibility_off' : 'visibility'"
-                class="cursor-pointer"
-                @click="isPwd = !isPwd"
-              />
+              <q-icon :name="isPwd ? 'visibility_off' : 'visibility'" class="cursor-pointer" @click="isPwd = !isPwd" />
             </template>
           </q-input>
-          <q-input
-            v-model="repeatPassword"
-            outlined
-            dense
-            label="تکرار رمز"
-            :type="isPwdRepeat ? 'password' : 'text'"
-          >
+          <q-input v-model="repeatPassword" outlined dense label="تکرار رمز" :type="isPwdRepeat ? 'password' : 'text'">
             <template v-slot:append>
-              <q-icon
-                :name="isPwdRepeat ? 'visibility_off' : 'visibility'"
-                class="cursor-pointer"
-                @click="isPwdRepeat = !isPwdRepeat"
-              />
+              <q-icon :name="isPwdRepeat ? 'visibility_off' : 'visibility'" class="cursor-pointer"
+                @click="isPwdRepeat = !isPwdRepeat" />
             </template>
           </q-input>
           <div>
-            <q-btn label="Submit" type="submit" color="primary" />
+            <q-btn label="Submit" type="submit" @click="onSubmit" color="primary" />
           </div>
         </q-form>
       </q-card-section>
@@ -71,15 +41,21 @@
 import { ref } from "vue";
 const username = ref(null);
 const password = ref(null);
+const repeatPassword = ref(null);
 const type = ref("number");
 const isPwd = ref(true);
 const isPwdRepeat = ref(true);
+const form = ref(null)
 const options = ref([
   { label: "", value: "number", slot: 1 },
   { label: "", value: "email", slot: 2 },
 ]);
-function onSubmit() {
-  alert("sabtenam ok shod");
+function onSubmit () {
+  if (!form.value.validate()) {
+    alert('ok')
+  } else {
+    alert('hoshdar')
+  }
 }
 </script>
 <style>
