@@ -6,8 +6,11 @@
           <q-input
             outlined
             dense
+            clearable
             v-model="username"
             :label="`نام کاربری  (${type === 'number' ? 'تلفن' : 'ایمیل'})`"
+            :rules="[(val) => (!!val && val.length >= 3) || 'لطفا خالی نذارید']"
+            hide-bottom-space
           />
           <template #append>
             <q-btn-toggle
@@ -28,8 +31,11 @@
             v-model="password"
             outlined
             dense
+            clearable
             label="رمز عبور"
             :type="isPwd ? 'password' : 'text'"
+            :rules="[(val) => val.length >= 8 || 'لطفا از 8 کاراکتر کم نباشد']"
+            hide-bottom-space
           >
             <template v-slot:append>
               <q-icon
@@ -43,8 +49,11 @@
             v-model="repeatPassword"
             outlined
             dense
+            clearable
             label="تکرار رمز"
             :type="isPwdRepeat ? 'password' : 'text'"
+            :rules="[(val) => val.length >= 8 || 'لطفا از 8 کاراکتر کم نباشد']"
+            hide-bottom-space
           >
             <template v-slot:append>
               <q-icon
@@ -67,6 +76,7 @@
 import { ref } from "vue";
 const username = ref(null);
 const password = ref(null);
+const repeatPassword = ref(null);
 const ispwd = ref(true);
 const isPwdRepeat = ref(true);
 const type = ref("number");
