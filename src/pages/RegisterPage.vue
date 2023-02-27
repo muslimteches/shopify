@@ -4,12 +4,14 @@
     <div class="row full-width justify-center bg-svg" style="min-height: 100vh">
       <div class="col-6">
         <TopTitle />
+        <FormComponent />
       </div>
     </div>
   </q-page>
 </template>
 
 <script setup>
+import FormComponent from 'src/components/login/FormComponent.vue';
 import TopTitle from "src/components/login/TopTitle.vue";
 </script>
 <style lang="scss">
