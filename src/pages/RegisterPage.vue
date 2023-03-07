@@ -4,6 +4,7 @@
     <div class="row full-width justify-center bg-svg" style="min-height: 100vh">
       <div class="col-6">
         <TopTitle />
+        <FormComponent />
       </div>
     </div>
   </q-page>
